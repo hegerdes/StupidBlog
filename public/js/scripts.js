@@ -1,4 +1,4 @@
-/* Template: Aria - Business HTML Landing Page Template
+/* Template: G&S Satcom - Business HTML Landing Page Template
    Author: Inovatik
    Created: Jul 2019
    Description: Custom JS file
@@ -6,8 +6,8 @@
 
 
 (function($) {
-    "use strict"; 
-	
+    "use strict";
+
 	/* Preloader */
 	$(window).on('load', function() {
 		var preloaderFadeOutTime = 500;
@@ -20,7 +20,7 @@
 		hidePreloader();
 	});
 
-	
+
 	/* Navbar Scripts */
 	// jQuery to collapse the navbar on scroll
     $(window).on('scroll load', function() {
@@ -61,7 +61,7 @@
 			// Called after the entrance animation is executed.
 		}
     });
-    
+
 
     /* Card Slider - Swiper */
 	var cardSlider = new Swiper('.card-slider', {
@@ -84,11 +84,11 @@
             // when window is <= 768px
             768: {
                 slidesPerView: 1
-            } 
+            }
         }
     });
 
-    
+
     /* Lightbox - Magnific Popup */
 	$('.popup-with-move-anim').magnificPopup({
 		type: 'inline',
@@ -101,7 +101,7 @@
 		removalDelay: 300,
 		mainClass: 'my-mfp-slide-bottom'
     });
-    
+
 
     /* Filter - Isotope */
     var $grid = $('.grid').isotope({
@@ -109,27 +109,27 @@
         itemSelector: '.element-item',
         layoutMode: 'fitRows'
     });
-    
+
     // filter items on button click
     $('.filters-button-group').on( 'click', 'a', function() {
         var filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
-    
+
     // change is-checked class on buttons
     $('.button-group').each( function( i, buttonGroup ) {
         var $buttonGroup = $( buttonGroup );
         $buttonGroup.on( 'click', 'a', function() {
             $buttonGroup.find('.is-checked').removeClass('is-checked');
             $( this ).addClass('is-checked');
-        });	
+        });
     });
-    
+
 
     /* Counter - CountTo */
 	var a = 0;
 	$(window).scroll(function() {
-		if ($('#counter').length) { // checking if CountTo section exists in the page, if not it will not run the script and avoid errors	
+		if ($('#counter').length) { // checking if CountTo section exists in the page, if not it will not run the script and avoid errors
 			var oTop = $('#counter').offset().top - window.innerHeight;
 			if (a == 0 && $(window).scrollTop() > oTop) {
 			$('.counter-value').each(function() {
@@ -189,11 +189,11 @@
 		var email = $("#lemail").val();
 		var select = $("#lselect").val();
         var terms = $("#lterms").val();
-        
+
         $.ajax({
             type: "POST",
             url: "php/callmeform-process.php",
-            data: "name=" + name + "&phone=" + phone + "&email=" + email + "&select=" + select + "&terms=" + terms, 
+            data: "name=" + name + "&phone=" + phone + "&email=" + email + "&select=" + select + "&terms=" + terms,
             success: function(text) {
                 if (text == "success") {
                     lformSuccess();
@@ -232,7 +232,7 @@
             // everything looks good!
             event.preventDefault();
             csubmitForm();
-        
+
     });
 
     function csubmitForm() {
@@ -244,11 +244,11 @@
         $.ajax({
             type: "POST",
             url: "write",
-            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
+            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms,
             success: function(text) {
                 // if (text == "success") {
                 //     cformSuccess();
-                // } 
+                // }
                 // else {
                 //     cformError();
                 //     csubmitMSG(false, text);
@@ -299,11 +299,11 @@
 		var email = $("#pemail").val();
         var select = $("#pselect").val();
         var terms = $("#pterms").val();
-        
+
         $.ajax({
             type: "POST",
             url: "php/privacyform-process.php",
-            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
+            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms,
             success: function(text) {
                 if (text == "success") {
                     pformSuccess();
@@ -335,7 +335,7 @@
         }
         $("#pmsgSubmit").removeClass().addClass(msgClasses).text(msg);
     }
-    
+
 
     /* Back To Top Button */
     // create the back to top button

@@ -32,7 +32,7 @@ if (empty($_POST["terms"])) {
 }
 
 $EmailTo = "yourname@domain.com";
-$Subject = "New quote request from Aria landing page";
+$Subject = "New quote request from G&S Satcom landing page";
 
 // prepare email body text
 $Body = "";

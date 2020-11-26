@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Aria is a business focused HTML landing page template built with Bootstrap to help you create lead generation websites for companies and their services.">
+    <meta name="description" content="G&S Satcom is a business focused HTML landing page template built with Bootstrap to help you create lead generation websites for companies and their services.">
     <meta name="author" content="Inovatik">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
@@ -18,8 +18,8 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Aria - Business HTML Landing Page Template</title>
-    
+    <title>G&S Satcom - Business HTML Landing Page Template</title>
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
@@ -28,12 +28,12 @@
     <link href="css/swiper.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
-    
+
     <%- include('inc/header_nav'); %>
 
      <!-- Header -->
@@ -44,7 +44,7 @@
                     <div class="col-lg-12">
                         <div class="text-container">
                             <h1>BUSINESS <span id="js-rotating">TEMPLATE, SERVICES, SOLUTIONS</span></h1>
-                            <p class="p-heading p-large">Aria is a top consultancy company specializing in business growth using online marketing and conversion optimization tactics</p>
+                            <p class="p-heading p-large">G&S Satcom is a top consultancy company specializing in business growth using online marketing and conversion optimization tactics</p>
                             <a class="btn-solid-lg page-scroll" href="#news">DISCOVER</a>
                         </div>
                     </div> <!-- end of col -->
@@ -66,40 +66,31 @@
 		</div> <!-- end of container -->
     </div> <!-- end of filter -->
     <!-- end of projects -->
-    
-    
-   
+
+
+
 
     <!-- Contact -->
     <div id="contact" class="form-2">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    
+
                     <!-- Contact Form -->
-                    <form id="contactForm" data-toggle="validator" data-focus="false">
-                        <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
-                            <label class="label-control" for="cname">Name</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
-                            <label class="label-control" for="cemail">Email</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                            <label class="label-control" for="cmessage">Your message</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
-                        </div>
-                        <div class="form-message">
-                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
-                        </div>
-                    </form>
+                    <form action="/write" method="POST">
+                        <fieldset>
+                          <h3>Create new Post</h3>
+                          <label>Title</label>
+                          <input type ="text" id = 'empID' name="title" required>
+                          <br><br>
+                          <label>Your Name</label>
+                          <input type="text" id = "name" name="name" required>
+                          <br><br><label>Story</label>
+                          <input type="text" id = "name" name="story" required>
+                          <br><br>
+                          <button type ="submit">Submit</button>
+                        </fieldset>
+                      </form>
                     <!-- end of contact form -->
 
                 </div> <!-- end of col -->
