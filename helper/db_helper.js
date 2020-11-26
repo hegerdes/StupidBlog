@@ -34,6 +34,12 @@ function getPost(postID, callback) {
     })
 }
 
+function getNewsIds(callback) {
+    connection.query('SELECT NewsID FROM news;', (error, result) => {
+        if (error) console.log(error)
+        return callback(result);
+    })
+}
 
 function getHeadline(callback) {
     connection.query('SELECT headline FROM news', (error, result, field) => {
@@ -45,4 +51,5 @@ function getHeadline(callback) {
 
 exports.getHeadline = getHeadline;
 exports.getNews = getNews
+exports.getNewsIds = getNewsIds
 exports.getPost = getPost

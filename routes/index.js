@@ -2,9 +2,15 @@ var express = require('express');
 var router = express.Router();
 var db = require('../helper/db_helper');
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
+  var postIDs
+  db.getNewsIds( function(err, data){
+    postIDs = data
+    console.log(data)
+  })
   res.render('index', { title: 'Express' });
 });
 
@@ -26,8 +32,14 @@ router.get('/tmp', function(req, res, next) {
 
 /* GET wirte Post. */
 router.get('/write', function(req, res, next) {
+  res.render('write', { title: 'Express' });
+});
 
-  res.render('write', { title: 'Express', news: null });
+/* POST wirte Post. */
+router.post('/write', function(req, res, next) {
+  var userinput = req.body.text;
+  console.log(userinput)
+  res.redirect('/')
 });
 
 
