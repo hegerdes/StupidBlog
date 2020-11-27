@@ -81,10 +81,11 @@
 
                     <!-- Tab -->
                     <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                        <h4><strong><%= article.headline %></strong></h4>
+                        <a href="post_<%= article.NewsID %>"><h4><%= article.headline %></h4></a>
+                        
                         <p><%= article.content %>, born <%= article.date %></p>
 
-
+                        <a href="<%= article.NewsID %>" class="btn btn-primary" role="button"><h4>Read More</h4></a>
                     </div> <!-- end of tab-pane -->
                     <!-- end of tab -->
 
