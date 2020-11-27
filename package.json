@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "node ./node_modules/nodemon/bin/nodemon.js"
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js",
+    "forever": "node ./node_modules/forever/bin/forever start bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -12,7 +13,9 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-validator": "^6.7.0",
+    "forever": "^3.0.4",
     "http-errors": "~1.6.3",
+    "lru-cache": "^6.0.0",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1"
   },

@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let ejs = require('ejs'),
+    LRU = require('lru-cache');
+ejs.cache = new LRU(100); 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

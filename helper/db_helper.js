@@ -18,9 +18,9 @@ connection.connect(function (err) {
 
 function getNews(callback) {
   connection.query(
-    "SELECT NewsID, headline, content, date, firstname, surname FROM news, author",
+    "SELECT DISTINCT NewsID, headline, content, date, firstname, surname FROM news, author WHERE author.authorID = news.authorID",
     (error, result, field) => {
-      if (error) console.log(error);
+      if (error) callback(error, null)
       return callback(null, result);
     }
   );
@@ -62,15 +62,7 @@ function checkUser(userMail, first, second, callback) {
       } else {
         console.log("Not exist");
         var query =
-          "INSERT INTO `author` (`authorID`, `firstname`, `surname`, `salut`, `mail`, `password`) VALUES (NULL, " +
-          connection.escape(first) +
-          ", " +
-          connection.escape(second) +
-          ", '" +
-          "Herr" +
-          "', " +
-          connection.escape(userMail) +
-          ", NULL);";
+          'INSERT INTO `author` (`authorID`, `firstname`, `surname`, `salut`, `mail`, `password`) VALUES (NULL, ' + connection.escape(first) + ', ' + connection.escape(second) + ', ' + '\'Herr\'' + ', ' + connection.escape(userMail) + ', NULL);';
         console.log(query);
         connection.query(query, (error, newresult, field) => {
           if (error) callback(error, null);
@@ -84,13 +76,7 @@ function checkUser(userMail, first, second, callback) {
 
 function postStory(userID, story, headline, callback) {
   var query =
-    "INSERT INTO `news` (`NewsID`, `authorID`, `headline`, `content`, `date`) VALUES (NULL, " +
-    userID +
-    ", " +
-    connection.escape(headline) +
-    ", " +
-    connection.escape(story) +
-    ", now());";
+    "INSERT INTO `news` (`NewsID`, `authorID`, `headline`, `content`, `date`) VALUES (NULL, " + userID + ", " + connection.escape(headline) + ", " + connection.escape(story) + ", NOW());";
   connection.query(query, (error, result, field) => {
     if (error) callback(error, null);
     return callback(null, result.insertId);
